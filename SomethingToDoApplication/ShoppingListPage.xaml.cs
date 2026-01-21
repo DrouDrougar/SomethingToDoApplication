@@ -60,7 +60,7 @@ public partial class ShoppingListPage : ContentPage
         listView.ItemsSource = await _dbService.GetShoppingTasks();
     }
 
-    private async void CollectionView_SlectionChanged(object sender, SelectionChangedEventArgs e)
+    private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         var item = e.CurrentSelection.FirstOrDefault() as ShoppingTaskModel;
         if (item == null) return;

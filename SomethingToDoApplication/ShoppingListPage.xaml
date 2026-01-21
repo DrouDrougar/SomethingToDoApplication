@@ -69,7 +69,7 @@
                       FlexLayout.Grow="1"
                       IsVisible="true"
                       SelectionMode="Single"
-                      SelectionChanged="CollectionView_SlectionChanged">
+                      SelectionChanged="CollectionView_SelectionChanged">
 
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
