@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SomethingToDoApp.RandomTaskPage"
+             BackgroundColor="#05010A"
+             Title="Random Task">
+
+    <VerticalStackLayout Padding="25" Spacing="35">
+
+        <!-- Cyberpunk Header -->
+        <VerticalStackLayout Spacing="6" Margin="0,40,0,0">
+            <Label Text="RANDOM TASK"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#F200FF"
+                   HorizontalTextAlignment="Center"
+                   CharacterSpacing="2"/>
+
+            <BoxView HeightRequest="3"
+                     WidthRequest="140"
+                     HorizontalOptions="Center"
+                     Color="#00F0FF"
+                     Opacity="0.9"
+                     CornerRadius="2"/>
+        </VerticalStackLayout>
+
+        <!-- Holographic Card -->
+        <Frame Padding="25"
+               CornerRadius="18"
+               BackgroundColor="#0D0017"
+               HasShadow="True"
+               BorderColor="#00F0FF"
+               Opacity="0.95">
+
+            <VerticalStackLayout Spacing="20">
+
+                <Label x:Name="NameLabel"
+                       Text="{Binding Name}"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="#00F0FF"
+                       HorizontalTextAlignment="Center"/>
+
+                <Label Text="DESCRIPTION"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="#F200FF"
+                       HorizontalTextAlignment="Center"
+                       CharacterSpacing="1"/>
+
+                <Label x:Name="DescriptionLabel"
+                       Text="{Binding Description}"
+                       FontSize="16"
+                       TextColor="#CFCFCF"
+                       HorizontalTextAlignment="Center"/>
+
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

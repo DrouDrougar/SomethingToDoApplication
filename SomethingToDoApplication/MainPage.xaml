@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SomethingToDoApplication.MainPage"
+             Title="{Binding Title}"
+             BackgroundColor="#05010A">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="35">
+
+            <VerticalStackLayout Spacing="6" Margin="0,40,0,0">
+                <Label Text="NEED SOMETHING TO DO?"
+                       FontSize="34"
+                       FontAttributes="Bold"
+                       TextColor="#F200FF"
+                       HorizontalTextAlignment="Center"
+                       CharacterSpacing="2"/>
+
+                <BoxView HeightRequest="3"
+                         WidthRequest="160"
+                         HorizontalOptions="Center"
+                         Color="#00F0FF"
+                         Opacity="0.9"
+                         CornerRadius="2"/>
+            </VerticalStackLayout>
+
+            <Frame Padding="25"
+                   CornerRadius="20"
+                   BackgroundColor="#0D0017"
+                   HasShadow="True"
+                   BorderColor="#00F0FF"
+                   Opacity="0.95">
+
+                <VerticalStackLayout Spacing="25">
+
+                    <Button 
+                        x:Name="YesButton"
+                        Text="🎲 GIVE ME SOMETHING TO DO"
+                        Clicked="YesButton_OnClicked"
+                        BackgroundColor="#00F0FF"
+                        TextColor="#05010A"
+                        CornerRadius="14"
+                        FontSize="18"
+                        HeightRequest="55" />
+
+                    <Button
+                        x:Name="AddButton"
+                        Text="➕ ADD A TASK"
+                        Clicked="AddButton_OnClicked"
+                        BackgroundColor="#F200FF"
+                        TextColor="White"
+                        CornerRadius="14"
+                        FontSize="18"
+                        HeightRequest="55" />
+
+                    <Button
+                        x:Name="ShoppingListButton"
+                        Text="🛒 SHOPPING LIST"
+                        Clicked="ShoppingListButton_OnClicked"
+                        BackgroundColor="#F200FF"
+                        TextColor="White"
+                        CornerRadius="14"
+                        FontSize="18"
+                        HeightRequest="55" />
+
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+

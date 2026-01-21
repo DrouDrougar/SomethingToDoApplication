@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SomethingToDoApplication.ShoppingListPage"
+             Title="ShoppingListPage">
+
+    <ScrollView>
+        <FlexLayout Direction="Column">
+
+            <VerticalStackLayout Padding="25" Spacing="35">
+
+                <!-- Header -->
+                <VerticalStackLayout Spacing="6" Margin="0,40,0,0">
+                    <Label Text="This is the Shopping List Page"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+                    <BoxView HeightRequest="3"
+                             WidthRequest="160"
+                             HorizontalOptions="Center"
+                             Color="#00F0FF"
+                             Opacity="0.9"
+                             CornerRadius="2"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+
+
+                    <VerticalStackLayout Spacing="20">
+
+                        <Entry x:Name="AddShoppingNameField"
+                               Placeholder="Items Name"
+                               TextColor="#00F0FF"
+                               PlaceholderColor="#7A7A7A"
+                               BackgroundColor="#0A0012"
+                               HeightRequest="50"
+                              />
+
+                        <Entry x:Name="AddShoppingDescriptionField"
+                               Placeholder="Description"
+                               TextColor="#00F0FF"
+                               PlaceholderColor="#7A7A7A"
+                               BackgroundColor="#0A0012"
+                               HeightRequest="50"
+                               />
+
+                        <Entry x:Name="AddShoppingQuantityField"
+                               Keyboard="Numeric"
+                               Placeholder="Quantity"
+                               TextColor="#00F0FF"
+                               PlaceholderColor="#7A7A7A"
+                               BackgroundColor="#0A0012"
+                               HeightRequest="50"
+                               />
+
+                        <Button x:Name="SaveButton"
+                                Text="💾 SAVE ITEM"
+                                Clicked="AddButton_Clicked"
+                                BackgroundColor="#00F0FF"
+                                TextColor="#05010A"
+                                CornerRadius="14"
+                                FontSize="18"
+                                HeightRequest="55"/>
+
+
+                    </VerticalStackLayout>
+
+                    <CollectionView
+                      x:Name="listView"
+                      FlexLayout.Grow="1"
+                      IsVisible="true"
+                      SelectionMode="Single"
+                      SelectionChanged="CollectionView_SlectionChanged">
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="15"
+                                       Margin="0,10"
+                                       CornerRadius="14"
+                                       BackgroundColor="#0D0017"
+                                       BorderColor="#00F0FF"
+                                       HasShadow="True">
+
+                                    <VerticalStackLayout Spacing="5">
+                                        <Label Text="{Binding ShoppingName}"
+                            FontSize="18"
+                            TextColor="#00F0FF"/>
+
+                                        <Label Text="{Binding ShoppingDescription}"
+                            FontSize="14"
+                            TextColor="#CFCFCF"/>
+
+                                        <Label Text="{Binding ShoppingQuantity}"
+                            FontSize="14"
+                            TextColor="#CFCFCF"/>
+                                    </VerticalStackLayout>
+
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+        </FlexLayout>
+    </ScrollView>
+</ContentPage>
