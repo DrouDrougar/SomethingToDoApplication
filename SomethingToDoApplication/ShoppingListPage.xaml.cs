@@ -15,8 +15,8 @@ public partial class ShoppingListPage : ContentPage
     private readonly SQLiteAsyncConnection _connection;
 
     public ShoppingListPage(LocalDbService dbService)
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
         BindingContext = new ShoppingViewModel();
 
@@ -30,7 +30,7 @@ public partial class ShoppingListPage : ContentPage
     {
         string taskName = AddShoppingNameField.Text;
         string taskDescription = AddShoppingDescriptionField.Text;
-        int shoppingQuantity = int.TryParse(AddShoppingQuantityField.Text, out var quantity) ? quantity : 0;    
+        int shoppingQuantity = int.TryParse(AddShoppingQuantityField.Text, out var quantity) ? quantity : 0;
 
         if (_editTaskId == 0)
         {
